@@ -95,57 +95,6 @@ basketball-shot-analyzer/
 └── README.md           # This file
 ```
 
----
-
-## 🌐 Deployment Instructions for Netlify
-
-### Method 1: Drag and Drop (Easiest)
-
-1. **Prepare files**:
-   - Make sure you have these 3 files in a folder:
-     - `index.html`
-     - `styles.css`
-     - `app.js`
-
-2. **Go to Netlify**:
-   - Visit [https://app.netlify.com/drop](https://app.netlify.com/drop)
-   - Create account or log in
-
-3. **Deploy**:
-   - Drag your folder onto the Netlify drop zone
-   - Wait 30 seconds for deployment
-   - Copy your live URL!
-
-### Method 2: GitHub Integration (Recommended)
-
-1. **Create GitHub Repository**:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit: Basketball Shot Analyzer"
-   git branch -M main
-   git remote add origin [your-repo-url]
-   git push -u origin main
-   ```
-
-2. **Connect to Netlify**:
-   - Go to [https://app.netlify.com](https://app.netlify.com)
-   - Click "Add new site" → "Import an existing project"
-   - Connect your GitHub account
-   - Select your repository
-   - Click "Deploy site"
-
-3. **Configure (if needed)**:
-   - Build command: (leave empty)
-   - Publish directory: (leave empty or set to `/`)
-   - Click "Deploy"
-
-4. **Get Your URL**:
-   - Netlify will give you a URL like: `https://your-app-name.netlify.app`
-   - You can customize the name in Site Settings
-
----
-
 ## 🔧 Technical Details
 
 ### MediaPipe Configuration
@@ -155,20 +104,6 @@ smoothLandmarks: true        // Smooth tracking between frames
 minDetectionConfidence: 0.5  // Detection threshold
 minTrackingConfidence: 0.5   // Tracking threshold
 ```
-
-### Performance Optimizations
-- Only processes necessary landmarks (11-28)
-- Rolling average prevents jittery measurements
-- Canvas clears only when needed
-- Efficient angle calculations using atan2
-
-### Browser Compatibility
-- ✅ Chrome 90+
-- ✅ Edge 90+
-- ✅ Firefox 88+
-- ✅ Safari 14.1+
-- ⚠️ Requires HTTPS for camera access (Netlify provides this)
-
 ---
 
 ## 📱 Usage Instructions
