@@ -2,7 +2,13 @@
 
 ## Computer Vision Application for Youth Athlete Development
 
-A real-time basketball shooting form analyzer that uses AI-powered pose detection to evaluate shooting technique and provide instant feedback. Built for Module 6 Computer Vision Assignment.
+A real-time basketball shooting form analyzer that uses AI-powered pose detection to evaluate shooting technique and provide instant feedback.
+- Track technique improvement over time
+- Provide objective data to coaches and scouts
+- Help athletes from pee wee through college levels
+- Identify areas for focused training
+- Support recruitment with quantifiable metrics
+
 
 ---
 
@@ -43,37 +49,6 @@ This application leverages **MediaPipe Pose Detection** to analyze basketball sh
 
 ---
 
-## 📋 Module 6 Requirements Compliance
-
-### ✅ Computer Vision Usage (30%)
-- **Pose Estimation**: Tracks 33 body landmarks in real-time
-- **Angle Calculation**: Computes joint angles for biomechanical analysis
-- **Body Tracking**: Continuous skeleton overlay on video feed
-- **Alignment Detection**: Evaluates body positioning and symmetry
-
-### ✅ Technical Implementation (30%)
-- MediaPipe Pose with optimized configuration
-- Real-time angle calculations using trigonometry
-- Rolling average system (30-frame buffer) for smooth metrics
-- Scoring algorithms for each technique parameter
-- Canvas rendering with visual feedback
-
-### ✅ User Experience (20%)
-- Clean, professional interface
-- Intuitive start/stop/reset controls
-- Real-time visual feedback with skeleton overlay
-- Color-coded metrics (green/yellow/red)
-- Responsive design (desktop and mobile)
-- Clear status indicators and instructions
-
-### ✅ Code Quality (20%)
-- Well-commented and documented
-- Modular function structure
-- Error handling for camera access
-- Performance optimizations
-- Clean separation of concerns (HTML/CSS/JS)
-
----
 
 ## 🎨 How It Works
 
@@ -171,18 +146,6 @@ basketball-shot-analyzer/
 
 ---
 
-## 🎓 Educational Context
-
-This project demonstrates practical applications of computer vision in sports technology and youth development. The analyzer could be integrated into a larger athlete tracking platform to:
-
-- Track technique improvement over time
-- Provide objective data to coaches and scouts
-- Help athletes from pee wee through college levels
-- Identify areas for focused training
-- Support recruitment with quantifiable metrics
-
----
-
 ## 🔧 Technical Details
 
 ### MediaPipe Configuration
@@ -230,20 +193,6 @@ Potential features for integration with athlete tracking platform:
 - Export reports for coaches
 - Mobile app version
 - Additional sports (baseball, football, etc.)
-
----
-
-## 📝 Assignment Submission
-
-**Submit only the Netlify URL** (e.g., `https://basketball-shot-analyzer.netlify.app`)
-
----
-
-## 👨‍💻 Author
-
-Created for Computer Vision Module 6 Assignment  
-Sport: Basketball | Focus: Youth Athlete Development  
-Technology: MediaPipe Pose Detection + HTML5 Canvas
 
 ---
 
