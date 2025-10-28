@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Shot Form Analyzer | Youth Athlete Development</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <div class="logo">
+                <h1>🏀 Shot Form Analyzer</h1>
+                <p class="subtitle">Professional Technique Analysis for Youth Athletes</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Video Section -->
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <video id="webcam" autoplay playsinline></video>
+                    <canvas id="output-canvas"></canvas>
+                    
+                    <!-- Loading Overlay -->
+                    <div id="loading-overlay" class="loading">
+                        <div class="spinner"></div>
+                        <p>Initializing AI Model...</p>
+                    </div>
+
+                    <!-- Status Indicator -->
+                    <div id="status-indicator" class="status-indicator">
+                        <span class="status-dot"></span>
+                        <span id="status-text">Ready</span>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <div class="controls">
+                    <button id="start-btn" class="btn btn-primary">
+                        <span>📹</span> Start Analysis
+                    </button>
+                    <button id="stop-btn" class="btn btn-secondary" disabled>
+                        <span>⏸️</span> Stop
+                    </button>
+                    <button id="reset-btn" class="btn btn-tertiary">
+                        <span>🔄</span> Reset Stats
+                    </button>
+                </div>
+            </div>
+
+            <!-- Analytics Section -->
+            <div class="analytics-container">
+                <div class="analytics-grid">
+                    <!-- Overall Form Score -->
+                    <div class="metric-card primary-card">
+                        <div class="metric-header">
+                            <h3>Overall Form Score</h3>
+                            <span class="info-icon" title="Composite score based on all technique metrics">ℹ️</span>
+                        </div>
+                        <div class="score-display">
+                            <div class="score-circle">
+                                <svg class="progress-ring" width="120" height="120">
+                                    <circle class="progress-ring-bg" cx="60" cy="60" r="52" />
+                                    <circle class="progress-ring-fill" id="score-ring" cx="60" cy="60" r="52" />
+                                </svg>
+                                <div class="score-text">
+                                    <span id="overall-score" class="score-number">--</span>
+                                    <span class="score-label">/ 100</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="form-feedback" class="feedback-text">
+                            Position yourself in frame to begin analysis
+                        </div>
+                    </div>
+
+                    <!-- Key Metrics -->
+                    <div class="metric-card">
+                        <h3>Shooting Elbow</h3>
+                        <div class="metric-value">
+                            <span id="elbow-angle" class="angle-display">--°</span>
+                        </div>
+                        <div class="metric-bar">
+                            <div id="elbow-bar" class="progress-bar"></div>
+                        </div>
+                        <p class="metric-status" id="elbow-status">Optimal: 85-95°</p>
+                    </div>
+
+                    <div class="metric-card">
+                        <h3>Release Height</h3>
+                        <div class="metric-value">
+                            <span id="release-height" class="angle-display">--°</span>
+                        </div>
+                        <div class="metric-bar">
+                            <div id="release-bar" class="progress-bar"></div>
+                        </div>
+                        <p class="metric-status" id="release-status">Optimal: 45-60°</p>
+                    </div>
+
+                    <div class="metric-card">
+                        <h3>Knee Bend</h3>
+                        <div class="metric-value">
+                            <span id="knee-angle" class="angle-display">--°</span>
+                        </div>
+                        <div class="metric-bar">
+                            <div id="knee-bar" class="progress-bar"></div>
+                        </div>
+                        <p class="metric-status" id="knee-status">Optimal: 100-130°</p>
+                    </div>
+
+                    <div class="metric-card">
+                        <h3>Body Alignment</h3>
+                        <div class="metric-value">
+                            <span id="alignment-score" class="angle-display">--</span>
+                        </div>
+                        <div class="metric-bar">
+                            <div id="alignment-bar" class="progress-bar"></div>
+                        </div>
+                        <p class="metric-status" id="alignment-status">Checking posture...</p>
+                    </div>
+                </div>
+
+                <!-- Tips Section -->
+                <div class="tips-container">
+                    <h3>💡 Pro Tips</h3>
+                    <ul id="tips-list">
+                        <li>Stand 6-8 feet away from your camera</li>
+                        <li>Ensure your full body is visible in the frame</li>
+                        <li>Use good lighting for better tracking</li>
+                        <li>Practice your shooting motion slowly at first</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>Powered by MediaPipe Pose Detection | Built for Youth Athlete Development</p>
+            <p class="note">Note: This tool provides educational feedback. Always consult with qualified coaches for personalized training.</p>
+        </footer>
+    </div>
+
+    <!-- MediaPipe Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js"></script>
+    
+    <!-- Main Application Script -->
+    <script src="app.js"></script>
+</body>
+</html>
